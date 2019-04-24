@@ -32,10 +32,14 @@ export class ElectivesComponent implements OnInit {
     })
     */
 
+/*    this.route.paramMap.subscribe(params => {let id = +params.get('_id');
+   console.log(id);
+   }) */
 
-    const id = this.route.snapshot.paramMap.get('id');
 
-    this.elective = this.temp.findElective(id);
+  /*   const id = this.route.snapshot.paramMap.get('id');
+
+    this.elective = this.temp.findElective(id); */
 
   }
 

@@ -7,6 +7,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { StudentComponent } from './student/student.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { SchoolComponent } from './school/school.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
 
@@ -14,12 +15,10 @@ const routes: Routes = [
 
   {path: 'home', component: HomeComponent },
   {path: 'school', component: SchoolComponent },
-  {path: 'administration', component: AdministrationComponent },
-  {path: 'electives', component: ElectivesComponent, children: [
-    {path: 'students/:id', component: StudentsComponent}
-    ]},
-
-  { path: '**', component: PagenotfoundComponent}
+  {path: 'administration', component: AdministrationComponent, /* canActivate: [AuthGuard]  */},
+  {path: 'electives', component: ElectivesComponent},
+  {path: 'students/:id', component: StudentsComponent},
+  {path: '**', component: PagenotfoundComponent}
 ];
 
 @NgModule({
